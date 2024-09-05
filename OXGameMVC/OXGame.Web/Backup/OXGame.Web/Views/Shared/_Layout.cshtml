@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    
+    <link href="@Url.Content("~/Scripts/Plugins/datatables/css/demo_table.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/Plugins/datatables/jAlert/jquery.alerts.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/_Core/Global.js")" type="text/javascript"></script>
+
+    @*Timer Plugin*@
+    <script src="@Url.Content("~/Scripts/jquery.timer.js")" type="text/javascript"></script>
+    
+    @*End Timer Plugin*@
+    
+    @*DateTable Section*@
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/jquery.dataTables.custom.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/dataTables.fnSetFiltering.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/jquery.jeditable.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/jquery.jeditable.plugins.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/jquery.dataTables.editable.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/js/jquery-ui.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/datatables/jAlert/jquery.alerts.js")" type="text/javascript"></script>
+    @*End DataTable Section*@
+    
+    @*Fancy Box*@
+    <link href="@Url.Content("~/Scripts/Plugins/fancybox/jquery.fancybox-1.3.4.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/Plugins/fancybox/jquery.fancybox-1.3.4.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/fancybox/jquery.easing-1.3.pack.js")" type="text/javascript"></script>
+    @*End Fancy Box*@
+
+
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("OXGame", "Index", "OXGame")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - OX Game By Kittikiat.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

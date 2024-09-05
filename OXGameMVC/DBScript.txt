@@ -1,0 +1,93 @@
+﻿CREATE DATABASE OXGames
+
+USE OXGames
+
+CREATE TABLE dbo.Game (
+    GameID int IDENTITY(1,1) PRIMARY KEY,
+    GameDate datetime NOT NULL,
+    GameStatusID int,
+    GameDuration int,
+    GameComment varchar(200),
+    ClientIP varchar(200)
+);
+
+
+
+
+CREATE TABLE dbo.GameStatus (
+    
+    GameStatusID int,
+   GameStatusDesc varchar(255)
+);
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (1,'X win');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (2,'O win');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (3,'Draw Game');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (4,'Quit Game');
+
+
+
+//ภาษาไทยบ้าง
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (1,'X ชนะเว้ยเห้ย');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (2,'O ชนะเว้ยเห้ย');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (3,'Draw Game เสมอซะงั้น');
+
+
+INSERT INTO dbo.GameStatus (GameStatusID,GameStatusDesc)
+VALUES (4,'Quit Game อยู่ๆก็ออก ไม่ยอมเล่นต่อ');
+
+
+
+
+truncate table dbo.Game;
+truncate table dbo.GameStatus;
+
+truncate table dbo.Game
+truncate table dbo.GameStatus
+
+
+
+-------------------------------------------
+con string
+
+workstation id=OXGames.mssql.somee.com;packet size=4096;user id=OXGames.mssql.somee.com;pwd=q94lx2igf8;data source=OXGames.mssql.somee.com;persist security info=False;initial catalog=OXGames
+
+
+
+
+
+
+
+
+--------------------------------------------------------------
+
+
+
+CREATE TABLE dbo.Game (    /// MYSQL
+    GameID int NOT NULL AUTO_INCREMENT,
+    GameDate datetime NOT NULL,
+    GameStatusID int,
+    GameDuration int,
+    GameComment varchar(200),
+    ClientIP varchar(200)
+    PRIMARY KEY (GameID)
+);

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OXGame.Web", "OXGame.Web\OXGame.Web.csproj", "{F41DDE47-FC43-48B8-9D2A-FE636534AE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OXGame.Data", "OXGame.Data\OXGame.Data.csproj", "{36D710E5-0EF0-431E-9312-BEE91D904763}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F41DDE47-FC43-48B8-9D2A-FE636534AE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41DDE47-FC43-48B8-9D2A-FE636534AE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41DDE47-FC43-48B8-9D2A-FE636534AE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41DDE47-FC43-48B8-9D2A-FE636534AE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D710E5-0EF0-431E-9312-BEE91D904763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D710E5-0EF0-431E-9312-BEE91D904763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D710E5-0EF0-431E-9312-BEE91D904763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D710E5-0EF0-431E-9312-BEE91D904763}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

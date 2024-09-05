@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OXGameModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="OXGameModelStoreContainer">
+          <EntitySet Name="Game" EntityType="OXGameModel.Store.Game" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GameStatus" EntityType="OXGameModel.Store.GameStatus" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GameDate" Type="datetime" Nullable="false" />
+          <Property Name="GameStatusID" Type="int" Nullable="false" />
+          <Property Name="GameDuration" Type="int" Nullable="false" />
+          <Property Name="GameComment" Type="nvarchar(max)" />
+          <Property Name="ClientIP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GameStatus">
+          <Key>
+            <PropertyRef Name="GameStatusID" />
+          </Key>
+          <Property Name="GameStatusID" Type="int" Nullable="false" />
+          <Property Name="GameStatusDesc" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OXGameModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OXGameEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Games" EntityType="OXGameModel.Game" />
+          <EntitySet Name="GameStatus" EntityType="OXGameModel.GameStatu" />
+        </EntityContainer>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GameDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GameStatusID" Type="Int32" Nullable="false" />
+          <Property Name="GameDuration" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="GameComment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ClientIP" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GameStatu">
+          <Key>
+            <PropertyRef Name="GameStatusID" />
+          </Key>
+          <Property Name="GameStatusID" Type="Int32" Nullable="false" />
+          <Property Name="GameStatusDesc" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OXGameModelStoreContainer" CdmEntityContainer="OXGameEntities">
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="OXGameModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="ClientIP" ColumnName="ClientIP" />
+                <ScalarProperty Name="GameComment" ColumnName="GameComment" />
+                <ScalarProperty Name="GameID" ColumnName="GameID" />
+                <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+                <ScalarProperty Name="GameStatusID" ColumnName="GameStatusID" />
+                <ScalarProperty Name="GameDuration" ColumnName="GameDuration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameStatus">
+            <EntityTypeMapping TypeName="OXGameModel.GameStatu">
+              <MappingFragment StoreEntitySet="GameStatus">
+                <ScalarProperty Name="GameStatusID" ColumnName="GameStatusID" />
+                <ScalarProperty Name="GameStatusDesc" ColumnName="GameStatusDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="e2d54fe7b63a4d2294b0ca6d1ed12a67" Name="Diagram1">
+        <EntityTypeShape EntityType="OXGameModel.Game" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OXGameModel.GameStatu" Width="1.75" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

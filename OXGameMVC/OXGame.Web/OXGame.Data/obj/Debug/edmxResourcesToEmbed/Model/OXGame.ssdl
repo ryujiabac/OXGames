@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OXGameModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="OXGameModelStoreContainer">
+    <EntitySet Name="Game" EntityType="OXGameModel.Store.Game" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GameStatus" EntityType="OXGameModel.Store.GameStatus" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GameDate" Type="datetime" Nullable="false" />
+    <Property Name="GameStatusID" Type="int" Nullable="false" />
+    <Property Name="GameDuration" Type="int" Nullable="false" />
+    <Property Name="GameComment" Type="nvarchar(max)" />
+    <Property Name="ClientIP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GameStatus">
+    <Key>
+      <PropertyRef Name="GameStatusID" />
+    </Key>
+    <Property Name="GameStatusID" Type="int" Nullable="false" />
+    <Property Name="GameStatusDesc" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+</Schema>

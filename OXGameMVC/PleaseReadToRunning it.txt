@@ -1,0 +1,10 @@
+1.It creates  by vs2012 MVC4 
+2.Create Database Name OXGames 
+3.Create table name dbo.Game (Auto Increment for primary key) and dbo.GameStatus
+4.There are 4 status  please insert follow this
+    Status 1. X win
+    Status 2. Y win
+    Status 3. Draw Game
+    Status 4. Quit Game
+
+Then Entities framework will runs fine.

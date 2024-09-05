@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Welcome to OXGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mainBody">
+    <div class="leftPane">
+        <div class="gameZone">
+            <div class="gameMenu">
+                <span class="startGame" onclick="OXEngine.gameStart();">New Game |</span>
+                <span class="startGame2">New Game |</span>
+                <span class="quitGame">Quit</span>
+                <span class="quitGame2" onclick="OXEngine.gameQuit();">Quit</span>
+                <span class='count'>0</span>
+            </div>
+            <div class="OXZone">
+                <div class="TableGame">
+                    <div class="row1">
+                        <div>
+                            <input type="button" name="sqr1" value="" class="OXBtn b1" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div>
+                            <input type="button" name="sqr2" value="" class="OXBtn b2" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div class="thirdDiv">
+                            <input type="button" name="sqr3" value="" class="OXBtn b3" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                    </div>
+
+                    <div class="row2">
+                        <div>
+                            <input type="button" name="sqr4" value="" class="OXBtn b4" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div>
+                            <input type="button" name="sqr5" value="" class="OXBtn b5" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div class="thirdDiv">
+                            <input type="button" name="sqr6" value="" class="OXBtn b6" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                    </div>
+                    <div class="row3">
+                        <div>
+                            <input type="button" name="sqr7" value="" class="OXBtn b7" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div>
+                            <input type="button" name="sqr8" value="" class="OXBtn b8" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                        <div class="thirdDiv">
+                            <input type="button" name="sqr9" value="" class="OXBtn b9" onclick="OXEngine.engineStart(this); OXEngine.winner(this);" />
+                        </div>
+                    </div>
+                </div>
+                <div class="Comment">
+                    <div class="commentLabel">
+                        Comment:
+                    </div>
+                    <div class="commentTextBox">
+                        <textarea id="txtAreaComment" cols="20" rows="2"></textarea>
+                    </div>
+                </div>
+                <img src="~/Images/1.png" class="lineImage i1" />
+                <img src="~/Images/2.png" class="lineImage i2" />
+                <img src="~/Images/3.png" class="lineImage i3" />
+                <img src="~/Images/4.png" class="lineImage i4" />
+                <img src="~/Images/5.png" class="lineImage i5" />
+                <img src="~/Images/6.png" class="lineImage i6" />
+                <img src="~/Images/7.png" class="lineImage i7" />
+                <img src="~/Images/8.png" class="lineImage i8" />
+            </div>
+            <img src="~/Images/oxBackGround.jpg" class="OxGackGround" />
+            <div class="OXStatus">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <img src="~/Images/loading.gif" class="loading" />
+    <div class="rightPane clear-fix">
+        <div class="gameStatus">
+            <table id="OXGameStatusTable">
+                <thead>
+                    <tr>
+                        <th>
+                            GameID
+                        </th>
+                        <th>
+                            GameDate
+                        </th>
+                        <th>
+                            GameDesc
+                        </th>
+                        <th>
+                            GameDuration
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="Statistic">
+            <table id="OXGameStatisticTable">
+                <thead>
+                    <tr>
+                        <th>
+                            X win %
+                        </th>
+                        <th>
+                            O win %
+                        </th>
+                        <th>
+                            Draw Game %
+                        </th>
+                        <th>
+                            Quit %
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/OXEngine.js"></script>
+<script type="text/ecmascript">
+    OXEngine.gridInit();
+    OXEngine.statisticInit();
+</script>

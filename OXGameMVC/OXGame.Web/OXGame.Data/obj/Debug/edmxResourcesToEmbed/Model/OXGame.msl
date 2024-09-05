@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OXGameModelStoreContainer" CdmEntityContainer="OXGameEntities">
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="OXGameModel.Game">
+        <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="ClientIP" ColumnName="ClientIP" />
+          <ScalarProperty Name="GameComment" ColumnName="GameComment" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="GameDate" ColumnName="GameDate" />
+          <ScalarProperty Name="GameStatusID" ColumnName="GameStatusID" />
+          <ScalarProperty Name="GameDuration" ColumnName="GameDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameStatus">
+      <EntityTypeMapping TypeName="OXGameModel.GameStatu">
+        <MappingFragment StoreEntitySet="GameStatus">
+          <ScalarProperty Name="GameStatusID" ColumnName="GameStatusID" />
+          <ScalarProperty Name="GameStatusDesc" ColumnName="GameStatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
